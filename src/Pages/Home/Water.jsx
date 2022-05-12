@@ -8,20 +8,19 @@ import {
 
 const Water = () => {
   const [progress, setProgress] = useState(0);
-  const ml = 250;
+  const [ml, setMl] = useState(0);
   const meta = 3000;
+  const per = 100 / (meta / 250);
 
   function handleClick(){
-
-    const per = 100 / (meta / ml);
-
-    setProgress(progress + per)
+    setMl(ml + 250);
+    setProgress(progress + per);
   }
   return (
     <Drink>
       <div>
         <ProgressBar percent={progress}>
-          <p>{progress}%</p>
+          <p>{ml/1000}L</p>
         </ProgressBar> 
       </div>
 
@@ -29,7 +28,7 @@ const Water = () => {
         <Meta>
           <p>Meta</p>
           
-          <h3><span>{progress}%/</span>{`${meta/1000}L`}</h3>
+          <h3><span>{ml/1000}/</span>{`${meta/1000}L`}</h3>
 
           <button onClick={handleClick}>+250ml</button>
         </Meta>

@@ -1,14 +1,30 @@
 import React, {useContext} from 'react'
 
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import Water from './Water'
+
+
 import { AuthContext } from '../../context/auth';
 
-const Home = () => {
-  const { user, logout } = useContext(AuthContext);
+import {
+  Hello,
+  HomePage
+} from './styles';
 
-  console.log(user);
+const Home = () => {
+  const { user } = useContext(AuthContext);
 
   return (
-    <div>Home - Olá {user.email}</div>
+    <HomePage>
+      <Header />
+      
+      <Hello>Olá, {user.name}.</Hello>
+
+      <Water></Water>
+
+      <Footer />
+    </HomePage>
   )
 }
 

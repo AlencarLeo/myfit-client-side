@@ -10,3 +10,11 @@ export const createSession = async (email, password) => {
     password
   });
 };
+
+export const createUser = async (email, password, name) => {
+  return api.post('/users', {
+    email,
+    password,
+    name
+  });
+};

@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     localStorage.removeItem('user');
-    localStorage.setItremoveItemem('token');
+    localStorage.removeItem('token');
     api.defaults.headers.Authorization = null;
     setUser(null);
     navigate('/login');

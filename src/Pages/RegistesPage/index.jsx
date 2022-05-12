@@ -1,17 +1,20 @@
-import React, {useState, useContext} from 'react'
-import { AuthContext } from '../../context/auth';
+import React, {useState} from 'react'
 import Logo from '../../assets/imgs/Logo'
 import { InputField, Form, Page, Button } from './styles'
+import { createUser } from '../../services/api'
+import { useNavigate } from 'react-router-dom'
 
 const LoginPage = () => {
-  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  const [ name, setName ] = useState('');
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  function handleLogin(e){
+  function handleRegister(e){
     e.preventDefault();
-    login(email, password);
+    createUser(email, password, name);
+    navigate('/');
   } 
 
   return (
@@ -19,6 +22,20 @@ const LoginPage = () => {
       <Logo />
 
       <Form action="">
+      <InputField>
+          <input 
+            type="text" 
+            id='name' 
+            name='name' 
+            placeholder=' ' 
+            autoComplete='off' 
+            required
+            value={name}
+            onChange={({target}) => setName(target.value)} 
+          />
+          <label htmlFor="name">Nome</label>
+        </InputField>
+
         <InputField>
           <input 
             type="text" 
@@ -47,8 +64,8 @@ const LoginPage = () => {
           <label htmlFor="email">Password</label>
         </InputField>
 
-        <Button onClick={handleLogin}>Entrar</Button>
-        <a href="/register">Registrar-se</a>
+        <Button onClick={handleRegister}>Registrar-se</Button>
+        <a href="/login">Já tenho uma conta</a>
       </Form>
     </Page>
   )

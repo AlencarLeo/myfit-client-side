@@ -30,6 +30,7 @@ export const ProgressBar = styled.div`
   display: grid;
   place-items: center;
   background: conic-gradient( #00EEC3 ${props => `${props.percent * 3.6}deg`}, #191919 ${props => `${props.percent * 3.6}deg`});
+  transition: all .3s ease-in-out;
   &::before{
     content: '';
     position: absolute;
@@ -48,6 +49,7 @@ export const Meta = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   height: 250px;
   p{
     font-size: .875rem;
@@ -62,6 +64,10 @@ export const Meta = styled.div`
     span{
       font-size: 1.5rem;
     }
+  }
+
+  div{
+    display: flex;
   }
 
   button{

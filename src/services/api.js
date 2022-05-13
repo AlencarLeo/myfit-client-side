@@ -18,3 +18,23 @@ export const createUser = async (email, password, name) => {
     name
   });
 };
+
+export const createWaterInfo = async (userId, progress, ml, meta) => {
+  let url = `/users/${userId}/water/`
+  
+  return api.post(url, {
+    progress,
+    ml,
+    meta
+  });
+};
+
+export const updateWaterInfo = async (userId, id, progress, ml, meta) => {
+  let url = `/users/${userId}/water/${id}`
+  
+  return api.put(url, {
+    progress,
+    ml,
+    meta
+  });
+};

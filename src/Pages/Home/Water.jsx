@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { createWaterInfo, updateWaterInfo } from '../../services/api';
 import { AuthContext } from '../../context/auth';
+
+import { 
+  getWaterInfo, 
+  updateWaterInfo 
+} from '../../services/api';
 
 import {
   Drink,
@@ -8,49 +12,61 @@ import {
   Meta
 } from './styles'
 
+
 const Water = () => {
   const { user } = useContext(AuthContext);
-
   const [waterInfo, setWaterInfo] = useState([]);
 
-  const [progress, setProgress] = useState(0);
-  const [ml, setMl] = useState(0);
-  const meta = 4000;
+  let ml = waterInfo.ml;
+  let progress = waterInfo.progress;
+  const meta = waterInfo.meta;
+  
   const per = 100 / (meta / 250);
-//CARREGAR DADOS WATER INFO
-  /*
+  
+  //CARREGAR DADOS WATER INFO
+  useEffect(()=> {
+    (async () => await loadData())();
+  }, [])
+  
   const loadData = async (query = '') => {
     try{
-      const response = await getWater(user?.id, query);
-      setRepositories(response.data);
-      setLoading(false);
+      const response = await getWaterInfo(user?.id, query);
+      setWaterInfo(response.data);
     }catch(err){
       console.error(err);
-      setLoadingError(true);
     }    
   }
-*/
-  useEffect(()=>{
-    createWaterInfo(user?.id, 0, 0, 0)
-  },[/*CHAMAR ISSO SOMENTE NA PRIMEIRA VEZ QUE USAR O APP OU VIRAR 24H*/])
-
-  function addWater(){
-    setMl(ml + 250);
-    setProgress(progress + per);
-    updateWaterInfo(user?.id, /*id-do-waterinfo*/ ,progress, ml, meta)
-  }
   
-  function removeWater(){
+  
+
+  const addWater = async () =>{ 
+    loadData();
+    ml = waterInfo.ml + 250;
+    progress = waterInfo.progress + per;
+    await updateWaterInfo(user?.id, waterInfo._id , progress, ml, meta)
+  }
+
+  
+  
+  const removeWater = async () => {
+    loadData();
     if(progress > 0 && ml > 0){
-      setMl(ml - 250);
-      setProgress(progress - per);  
+      ml = waterInfo.ml - 250;
+      progress = waterInfo.progress - per; 
+      await updateWaterInfo(user?.id, waterInfo._id ,progress, ml, meta)
     }
   }
 
-  function zeroWater(){
-    setMl(0);
-    setProgress(0);
+  const zeroWater = async () => {
+    loadData();
+    ml = 0;
+    progress = 0;
+    await updateWaterInfo(user?.id, waterInfo._id , 0, 0, meta)
   }
+
+
+
+
 
   return (
     <Drink>

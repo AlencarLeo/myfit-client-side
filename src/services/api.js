@@ -19,14 +19,14 @@ export const createUser = async (email, password, name) => {
   });
 };
 
-export const createWaterInfo = async (userId, progress, ml, meta) => {
-  let url = `/users/${userId}/water/`
-  
-  return api.post(url, {
-    progress,
-    ml,
-    meta
-  });
+export const getWaterInfo = async (userId, query) => {
+  let url = `/users/${userId}/water`
+
+  if(query !== ''){
+    url += `?q=${query}`;
+  }
+
+  return api.get(url);
 };
 
 export const updateWaterInfo = async (userId, id, progress, ml, meta) => {

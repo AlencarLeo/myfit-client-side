@@ -6,6 +6,8 @@ META ATUAL:
   2.1- Todos usuários conseguem ver os dados de água de todos;
   2.2- Todos usuários atualizam o mesmo dado de água;
 
+  2.3 - excluir do banco de dados todos waterInfos sem UserId (o que causou o erro de todos se enxergarem);
+
   2.f- Melhorar código do Water.jsx, deixar clean e separar por funções; 
 ;
 

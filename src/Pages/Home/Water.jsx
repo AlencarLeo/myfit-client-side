@@ -18,10 +18,15 @@ const Water = () => {
   const { user } = useContext(AuthContext);
   const [waterInfo, setWaterInfo] = useState([]);
   
-  if(waterInfo.length === 0){
-    createWaterInfo(user?.id , 0, 0, 3000)
+  const createInfoUser = async () => {
+    await createWaterInfo(user?.id , 0, 0, 3000);
+    await loadData();
   }
-  console.log(waterInfo)
+
+  if(waterInfo.length === 0){
+    createInfoUser()
+  }
+  console.log(waterInfo);
  
   let ml = waterInfo.ml;
   let progress = waterInfo.progress;
@@ -43,12 +48,9 @@ const Water = () => {
     }    
   }
 
-
   const addWater = async () =>{ 
     ml = waterInfo.ml + 250;
     progress = waterInfo.progress + per;
-
-
     await updateWaterInfo(user?.id, waterInfo._id , progress, ml, meta)
     await loadData();
   }
@@ -69,15 +71,11 @@ const Water = () => {
     await loadData();
   }
 
-
-
-
-
   return (
     <Drink>
       <div>
         <ProgressBar percent={progress}>
-          <p>{ml/1000}L</p>
+          <p>{ml / 1000}L</p>
         </ProgressBar> 
       </div>
 

@@ -21,7 +21,7 @@ const Home = () => {
       
       <Hello>Olá, {user.name}.</Hello>
 
-      <Water></Water>
+      <Water />
 
       <Footer />
     </HomePage>

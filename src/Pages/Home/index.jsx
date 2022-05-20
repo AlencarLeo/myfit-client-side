@@ -2,7 +2,8 @@ import React, {useContext} from 'react'
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import Water from './Water'
+import Water from './Water';
+import Macro from './Macro';
 
 
 import { AuthContext } from '../../context/auth';
@@ -22,6 +23,7 @@ const Home = () => {
       <Hello>Olá, {user.name}.</Hello>
 
       <Water />
+      <Macro />
 
       <Footer />
     </HomePage>

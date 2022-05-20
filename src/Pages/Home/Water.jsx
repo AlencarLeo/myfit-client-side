@@ -3,7 +3,7 @@ import { AuthContext } from '../../context/auth';
 
 import { 
   getWaterInfo, 
-  updateWaterInfo ,
+  updateWaterInfo,
   createWaterInfo
 } from '../../services/api';
 
@@ -17,7 +17,12 @@ import {
 const Water = () => {
   const { user } = useContext(AuthContext);
   const [waterInfo, setWaterInfo] = useState([]);
-
+  
+  if(waterInfo.length === 0){
+    createWaterInfo(user?.id , 0, 0, 3000)
+  }
+  console.log(waterInfo)
+ 
   let ml = waterInfo.ml;
   let progress = waterInfo.progress;
   const meta = waterInfo.meta;
@@ -31,27 +36,13 @@ const Water = () => {
   
   const loadData = async (query = '') => {
     try{
-      if(waterInfo == []){
-        createWaterInfo(user?.id, 0, 0, 0)
-      }
       const response = await getWaterInfo(user?.id, query);
       setWaterInfo(response.data);
     }catch(err){
-      console.error(err);
+      console.error(err); 
     }    
   }
-  
-  
 
-  // const addWater = async () =>{ 
-  //   loadData();
-  //   ml = waterInfo.ml + 250;
-  //   progress = waterInfo.progress + per;
-  //   await updateWaterInfo(user?.id, waterInfo._id , progress, ml, meta)
-  // }
-  console.log(waterInfo._id)
-  // isa 627dc3c93f2cff7899c7276b
-  // adm 627dc3c93f2cff7899c7276b
 
   const addWater = async () =>{ 
     ml = waterInfo.ml + 250;
@@ -61,9 +52,6 @@ const Water = () => {
     await updateWaterInfo(user?.id, waterInfo._id , progress, ml, meta)
     await loadData();
   }
-
-
-  
   
   const removeWater = async () => {
     if(progress > 0 && ml > 0){

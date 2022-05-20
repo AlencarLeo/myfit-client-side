@@ -3,10 +3,9 @@ META ATUAL:
 1- Melhorar pastas código;
 
 2- Continuar integração do banco de dados com as informações de água
-  2.1- Todos usuários conseguem ver os dados de água de todos;
-  2.2- Todos usuários atualizam o mesmo dado de água;
-
-  2.3 - excluir do banco de dados todos waterInfos sem UserId (o que causou o erro de todos se enxergarem);
+  2.1- Limitar criação de water info para 1;
+  2.2- Página home inicia sem carregar componentes (precisa dar f5 para carregar infos);
+  2.3- Tornar meta de agua editável (iniciar tudo 0 e disponibilizar edição total);
 
   2.f- Melhorar código do Water.jsx, deixar clean e separar por funções; 
 ;

@@ -9,7 +9,9 @@ META ATUAL:
 ;
 
 3- Criação de macros info
-  3.1 - Base
+  3.1 - Integrar backend
 ;
 
 4- Erros que aparecem no console;
+
+5- Boas práticas React;

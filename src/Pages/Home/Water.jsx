@@ -72,27 +72,30 @@ const Water = () => {
   }
 
   return (
-    <Drink>
-      <div>
-        <ProgressBar percent={progress}>
-          <p>{ml / 1000}L</p>
-        </ProgressBar> 
-      </div>
+    <>
+      <h3>Água</h3>
+      <Drink>
+        <div>
+          <ProgressBar percent={progress}>
+            <p>{ml / 1000}L</p>
+          </ProgressBar> 
+        </div>
 
-      <div>
-        <Meta>
-          <p>Meta</p>
-          
-          <h3><span>{ml/1000}/</span>{`${meta/1000}L`}</h3>
+        <div>
+          <Meta>
+            <p>Meta do dia</p>
+            
+            <h3><span>{ml/1000}/</span>{`${meta/1000}L`}</h3>
 
-          <div>
-            <button onClick={addWater}>+250ml</button>
-            <button onClick={removeWater}>-250ml</button>
-            <button onClick={zeroWater}>Limpar</button>
-          </div>
-        </Meta>
-      </div>
-    </Drink>
+            <div>
+              <button onClick={addWater}>+250ml</button>
+              <button onClick={removeWater}>-250ml</button>
+              <button onClick={zeroWater}>Limpar</button>
+            </div>
+          </Meta>
+        </div>
+      </Drink>
+    </>
   )
 }
 

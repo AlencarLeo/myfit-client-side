@@ -1,35 +1,45 @@
-import React from 'react'
+import React from 'react';
+import { Container, ProgressBar, MacroInfo, MacroContent, Kcal } from './StylesMacro';
 
 const Macro = () => {
+
+  //transformar grama em %
+  
+  const carb = 30;
+  const protein = 20;
+  const fat = 50;
+  const kcal = 30;
+
   return (
-    <div>
+    <>
       <h2>Dieta</h2>
 
-      <div>
-        <h3>Macro</h3>
-        <div>
-          <div>
+      <Container>
+        <h3>Macro diáro</h3>
+
+        <MacroContent>
+          <MacroInfo>
             <p>Carboidratos <span>100g/100g</span></p>
-            <div>BARRA PROGRESSO</div>
-          </div>
+            <ProgressBar percent={carb} />
+          </MacroInfo>
 
-          <div>
+          <MacroInfo>
             <p>Proteínas <span>100g/100g</span></p>
-            <div>BARRA PROGRESSO</div>
-          </div>
+            <ProgressBar percent={protein} />
+          </MacroInfo>
 
-          <div>
+          <MacroInfo>
             <p>Gorduras <span>100g/100g</span></p>
-            <div>BARRA PROGRESSO</div>
-          </div>
-        </div>
+            <ProgressBar percent={fat} />
+          </MacroInfo>
+        </MacroContent>
 
-        <div>
-            <p>Calorias <span>100kcal/100kcal</span></p>
-            <div>BARRA PROGRESSO</div>
-          </div>
-      </div>
-    </div>
+        <Kcal>
+          <p>Calorias <span>1500kcal/3000kcal</span></p>
+          <ProgressBar percent={kcal} />
+        </Kcal>
+      </Container>
+    </>
   )
 }
 

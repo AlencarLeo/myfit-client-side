@@ -48,3 +48,34 @@ export const updateWaterInfo = async (userId, id, progress, ml, meta) => {
     meta
   });
 };
+
+//Carb
+export const getCarbInfo = async (userId, query) => {
+  let url = `/users/${userId}/carb`
+
+  if(query !== ''){
+    url += `?q=${query}`;
+  }
+
+  return api.get(url);
+};
+
+export const createCarbInfo = async (userId, progress, g, meta) => {
+  let url = `/users/${userId}/carb/`
+
+  return api.post(url, {
+    progress,
+    g,
+    meta
+  });
+};
+
+export const updateCarbInfo = async (userId, id, progress, g, meta) => {
+  let url = `/users/${userId}/carb/${id}`
+  
+  return api.put(url, {
+    progress,
+    g,
+    meta
+  });
+};

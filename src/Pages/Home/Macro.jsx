@@ -1,14 +1,32 @@
-import React from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import { AuthContext } from '../../context/auth';
+import { 
+  getCarbInfo, 
+  createCarbInfo,
+  updateCarbInfo
+} from '../../services/api';
+
 import { Container, ProgressBar, MacroInfo, MacroContent, Kcal } from './StylesMacro';
 
 const Macro = () => {
-
-  //transformar grama em %
+  const { user } = useContext(AuthContext);
+  const [carbInfo, setCarbInfo] = useState([]);
   
+  //carb
   const carb = 30;
-  const protein = 20;
-  const fat = 50;
-  const kcal = 30;
+  const metaCarb = 30;
+  const progressCarb = 30;
+  const perCarb = 100 / (metaCarb / 10);
+
+  //protein
+  //fat
+  //kcal
+
+
+  function handleClick(e){
+    e.preventDefault();
+    
+  }
 
   return (
     <>
@@ -18,26 +36,19 @@ const Macro = () => {
         <h3>Macro diáro</h3>
 
         <MacroContent>
+
           <MacroInfo>
             <p>Carboidratos <span>100g/100g</span></p>
-            <ProgressBar percent={carb} />
+            <ProgressBar percent={perCarb} />
+            <button onClick={handleClick}>add carb</button>
           </MacroInfo>
 
-          <MacroInfo>
-            <p>Proteínas <span>100g/100g</span></p>
-            <ProgressBar percent={protein} />
-          </MacroInfo>
-
-          <MacroInfo>
-            <p>Gorduras <span>100g/100g</span></p>
-            <ProgressBar percent={fat} />
-          </MacroInfo>
         </MacroContent>
 
-        <Kcal>
+        {/* <Kcal>
           <p>Calorias <span>1500kcal/3000kcal</span></p>
-          <ProgressBar percent={kcal} />
-        </Kcal>
+          <ProgressBar percent={perKcal} />
+        </Kcal> */}
       </Container>
     </>
   )

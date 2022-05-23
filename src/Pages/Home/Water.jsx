@@ -26,7 +26,6 @@ const Water = () => {
   if(waterInfo.length === 0){
     createInfoUser()
   }
-  console.log(waterInfo);
  
   let ml = waterInfo.ml;
   let progress = waterInfo.progress;

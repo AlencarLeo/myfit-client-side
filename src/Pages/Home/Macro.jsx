@@ -11,21 +11,51 @@ import { Container, ProgressBar, MacroInfo, MacroContent, Kcal } from './StylesM
 const Macro = () => {
   const { user } = useContext(AuthContext);
   const [carbInfo, setCarbInfo] = useState([]);
+
+  const createInfoUser = async () => {
+    await createCarbInfo(user?.id , 0, 0, 100);
+    await loadData();
+  }
+
+  if(carbInfo === null){
+    createInfoUser()
+  }
   
+  //CARREGAR DADOS WATER INFO
+  useEffect(()=> {
+    (async () => await loadData())();
+  }, [])
+    
+  const loadData = async (query = '') => {
+    try{
+      const response = await getCarbInfo(user?.id, query);
+      setCarbInfo(response.data);
+    }catch(err){
+      console.error(err); 
+    }    
+  }
+
+
+
   //carb
-  const carb = 30;
-  const metaCarb = 30;
-  const progressCarb = 30;
+  let carb = carbInfo.g;
+  let metaCarb = carbInfo.meta;
+  let progressCarb = carbInfo.progress;
   const perCarb = 100 / (metaCarb / 10);
+
+  console.log(carb, metaCarb, progressCarb)
 
   //protein
   //fat
   //kcal
 
 
-  function handleClick(e){
+  const addCarb = async(e) => {
     e.preventDefault();
-    
+    carb = carbInfo.g + 10;
+    progressCarb = carbInfo.progress + perCarb;
+    await updateCarbInfo(user?.id, carbInfo.id, progressCarb, carb, metaCarb);
+    await loadData();
   }
 
   return (
@@ -38,9 +68,9 @@ const Macro = () => {
         <MacroContent>
 
           <MacroInfo>
-            <p>Carboidratos <span>100g/100g</span></p>
-            <ProgressBar percent={perCarb} />
-            <button onClick={handleClick}>add carb</button>
+            <p>Carboidratos <span>{`${carb}g/${metaCarb}g`}</span></p>
+            <ProgressBar percent={progressCarb} />
+            <button onClick={addCarb}>add carb</button>
           </MacroInfo>
 
         </MacroContent>

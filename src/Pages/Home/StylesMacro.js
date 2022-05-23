@@ -24,6 +24,7 @@ export const ProgressBar = styled.div`
     left: 0;
     background-color: #00EEC2;
     width: ${props => `${props.percent}%`};
+    max-width: 100%;
     height: 25px;
     border-radius: 13px;
   }

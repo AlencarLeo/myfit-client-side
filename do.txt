@@ -1,6 +1,6 @@
 META ATUAL: 
 
-1- Melhorar pastas código, semantica html e styled-components;
+1- Melhorar pastas código, semantica html e URGENTE: styled-components;
 
 2- Continuar integração do banco de dados com as informações de água
   2.1- Limitar criação de water info para 1;
@@ -12,6 +12,20 @@ META ATUAL:
   3.1 - Integrar backend
 ;
 
-4- Erros que aparecem no console;
+4- Criar página perfil
+  4.1 - definir meta de água com perfil;
+  4.2 - definir meta de carbo com perfil;
+  4.3 - integrar metas;
+;
 
-5- Boas práticas React;
+
+5- Erros que aparecem no console;
+
+6- Boas práticas React;
+
+7- erro loading primeiro carregamento;
+
+f- Entender código de cabo a rabo e documentar no GitHub;
+
+
+//criar itegração agua e texto explicando

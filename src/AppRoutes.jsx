@@ -13,6 +13,8 @@ import RegisterPage from "./Pages/RegistesPage/index";
 import Home from './Pages/Home/index';
 import Perfil from './Pages/Perfil/index';
 
+import GlobalStyle from "./styles/GlobalStyle";
+
 
 const AppRoutes = () => {
   const Private = ({children}) => {
@@ -31,6 +33,7 @@ const AppRoutes = () => {
 
   return (
     <Router>
+      <GlobalStyle />
       <AuthProvider>
         <Routes>
           <Route exact path="/register" element={<RegisterPage />} />

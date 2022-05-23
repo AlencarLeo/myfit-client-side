@@ -1,4 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
 import { AuthContext } from '../../context/auth'
 import { getWaterInfo, updateWaterInfo } from '../../services/api';
 
@@ -35,6 +37,8 @@ const Profile = () => {
 
   return (
     <>
+    <Header />
+
     <h1>LEONARDO</h1>
 
     <div>
@@ -45,6 +49,8 @@ const Profile = () => {
       <p>Você deve beber: {profileMetaWater}L de água diariamente</p>
       <button onClick={handleClick}>Definir</button>
     </div>
+
+    <Footer />
     </>
   )
 }

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Base = styled.header`
+export const StyledHeader = styled.header`
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -10,13 +10,4 @@ export const Base = styled.header`
   max-width: 940px;
   height: 80px;
   margin: 0 auto;
-
-  a{
-    color: #00EEC3;
-    text-decoration: none;
-
-    &:hover{
-      text-decoration: underline;
-    }
-  }
 `

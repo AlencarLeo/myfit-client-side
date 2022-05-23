@@ -1,8 +1,13 @@
 import React, {useState} from 'react'
 import Logo from '../../assets/imgs/Logo'
-import { InputField, Form, Page, Button } from './styles'
 import { createUser } from '../../services/api'
 import { useNavigate } from 'react-router-dom'
+
+import { Button } from '../../components/styles/Button.styled';
+import { InputField } from '../../components/styles/InputField.styled';
+import { LinkButton } from '../../components/styles/LinkButton.styled'
+
+import { Form, Page } from './styles'
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -65,7 +70,7 @@ const LoginPage = () => {
         </InputField>
 
         <Button onClick={handleRegister}>Registrar-se</Button>
-        <a href="/login">Já tenho uma conta</a>
+        <LinkButton href="/login">Já tenho uma conta</LinkButton>
       </Form>
     </Page>
   )

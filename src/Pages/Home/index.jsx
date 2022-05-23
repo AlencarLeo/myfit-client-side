@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Water from './Water';
 import Macro from './Macro';
 

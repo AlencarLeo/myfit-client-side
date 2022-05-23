@@ -1,7 +1,12 @@
 import React, {useState, useContext} from 'react'
 import { AuthContext } from '../../context/auth';
 import Logo from '../../assets/imgs/Logo'
-import { InputField, Form, Page, Button } from './styles'
+
+import { Button } from '../../components/styles/Button.styled'
+import { InputField } from '../../components/styles/InputField.styled'
+import {LinkButton} from '../../components/styles/LinkButton.styled'
+
+import { Form, Page } from './styles'
 
 const LoginPage = () => {
   const { login } = useContext(AuthContext);
@@ -48,7 +53,7 @@ const LoginPage = () => {
         </InputField>
 
         <Button onClick={handleLogin}>Entrar</Button>
-        <a href="/register">Registrar-se</a>
+        <LinkButton href="/register">Registrar-se</LinkButton>
       </Form>
     </Page>
   )

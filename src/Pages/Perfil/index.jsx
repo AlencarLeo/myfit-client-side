@@ -21,7 +21,6 @@ const Profile = () => {
       console.error(err); 
     }    
   }
-
   
   
   const mlPerKg = 50;
@@ -30,10 +29,11 @@ const Profile = () => {
   const calcWaterDay = mlPerKg * weigth;
   const profileMetaWater = (calcWaterDay/1000).toString().substring(0, 4)
   
-  const handleClick = () => {
-    //enviar pra db
-    updateWaterInfo(user?.id, waterInfo._id , waterInfo.progress, waterInfo.ml, calcWaterDay)
+  const handleClick = async () => {    
+    await updateWaterInfo(user?.id, waterInfo._id, waterInfo.ml, calcWaterDay)
+    console.log(waterInfo.progress)
   }
+
 
   return (
     <>

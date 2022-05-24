@@ -31,8 +31,6 @@ const Water = () => {
   let progress = waterInfo.progress;
   const meta = waterInfo.meta;
   
-  const per = 100 / (meta / 250);
-  
   //CARREGAR DADOS WATER INFO
   useEffect(()=> {
     (async () => await loadData())();
@@ -49,16 +47,14 @@ const Water = () => {
 
   const addWater = async () =>{ 
     ml = waterInfo.ml + 250;
-    progress = waterInfo.progress + per;
-    await updateWaterInfo(user?.id, waterInfo._id , progress, ml, meta)
+    await updateWaterInfo(user?.id, waterInfo._id, ml, meta)
     await loadData();
   }
   
   const removeWater = async () => {
     if(progress > 0 && ml > 0){
       ml = waterInfo.ml - 250;
-      progress = waterInfo.progress - per; 
-      await updateWaterInfo(user?.id, waterInfo._id ,progress, ml, meta)
+      await updateWaterInfo(user?.id, waterInfo._id, ml, meta)
     }
     await loadData();
   }
@@ -66,7 +62,7 @@ const Water = () => {
   const zeroWater = async () => {
     ml = 0;
     progress = 0;
-    await updateWaterInfo(user?.id, waterInfo._id , 0, 0, meta)
+    await updateWaterInfo(user?.id, waterInfo._id, 0, meta)
     await loadData();
   }
 
@@ -75,7 +71,7 @@ const Water = () => {
       <h3>Água</h3>
       <Drink>
         <div>
-          <ProgressBar percent={progress}>
+          <ProgressBar percent={waterInfo.progress}>
             <p>{ml / 1000}L</p>
           </ProgressBar> 
         </div>

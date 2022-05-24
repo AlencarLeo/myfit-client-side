@@ -29,21 +29,19 @@ export const getWaterInfo = async (userId, query) => {
   return api.get(url);
 };
 
-export const createWaterInfo = async (userId, progress, ml, meta) => {
+export const createWaterInfo = async (userId, ml, meta) => {
   let url = `/users/${userId}/water/`
 
   return api.post(url, {
-    progress,
     ml,
     meta
   });
 };
 
-export const updateWaterInfo = async (userId, id, progress, ml, meta) => {
+export const updateWaterInfo = async (userId, id, ml, meta) => {
   let url = `/users/${userId}/water/${id}`
   
   return api.put(url, {
-    progress,
     ml,
     meta
   });

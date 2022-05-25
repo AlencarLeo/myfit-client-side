@@ -13,7 +13,7 @@ const Macro = () => {
   const [carbInfo, setCarbInfo] = useState([]);
 
   const createInfoUser = async () => {
-    await createCarbInfo(user?.id , 0, 0, 100);
+    await createCarbInfo(user?.id , 0, 100);
     await loadData();
   }
 

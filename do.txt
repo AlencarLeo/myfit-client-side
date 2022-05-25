@@ -34,3 +34,6 @@ f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e 
 // Global styles, theme provider e continuar a organizar styled-components
 
 // da mesma forma que waterInfo.progress atualiza sozinho no back, fazer com macros
+
+
+// tornar reativo valores de ml

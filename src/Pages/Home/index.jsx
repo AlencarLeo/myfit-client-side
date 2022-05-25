@@ -3,7 +3,7 @@ import React, {useContext} from 'react'
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Water from './Water';
-import Macro from './Macro';
+//import Macro from './Macro';
 
 
 import { AuthContext } from '../../context/auth';
@@ -23,7 +23,7 @@ const Home = () => {
       <Hello>Olá, {user.name}.</Hello>
 
       <Water />
-      <Macro />
+      {/*<Macro />*/}
 
       <Footer />
     </HomePage>

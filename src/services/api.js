@@ -11,7 +11,7 @@ export const createSession = async (email, password) => {
   });
 };
 
-export const createUser = async (email, password, name) => {
+export const createUser = async (email, password, name) => {  
   return api.post('/users', {
     email,
     password,
@@ -29,19 +29,21 @@ export const getWaterInfo = async (userId, query) => {
   return api.get(url);
 };
 
-export const createWaterInfo = async (userId, ml, meta) => {
+export const createWaterInfo = async (userId, ml, progress, meta) => {
   let url = `/users/${userId}/water/`
 
   return api.post(url, {
+    progress,
     ml,
     meta
   });
 };
 
-export const updateWaterInfo = async (userId, id, ml, meta) => {
+export const updateWaterInfo = async (userId, id, progress, ml, meta) => {
   let url = `/users/${userId}/water/${id}`
   
   return api.put(url, {
+    progress,
     ml,
     meta
   });
@@ -58,21 +60,19 @@ export const getCarbInfo = async (userId, query) => {
   return api.get(url);
 };
 
-export const createCarbInfo = async (userId, progress, g, meta) => {
+export const createCarbInfo = async (userId, g, meta) => {
   let url = `/users/${userId}/carb/`
 
   return api.post(url, {
-    progress,
     g,
     meta
   });
 };
 
-export const updateCarbInfo = async (userId, id, progress, g, meta) => {
+export const updateCarbInfo = async (userId, id, g, meta) => {
   let url = `/users/${userId}/carb/${id}`
   
   return api.put(url, {
-    progress,
     g,
     meta
   });

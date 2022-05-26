@@ -38,16 +38,27 @@ const Home = () => {
     }    
   }
 
-  
+  const handleAdd = async () => {
+    waterInfo.ml += 250;
+    waterInfo.progress = (100 * waterInfo.ml) / waterInfo.meta;
+    await updateWaterInfo(user?.id, waterInfo._id, waterInfo.progress, waterInfo.ml, waterInfo.meta);
+    await loadData();
+  }
 
-  const handleAdd = () => {
-    
+  const handleRemove = async () => {
+    if(waterInfo.ml >= 250){
+      waterInfo.ml -= 250;
+      waterInfo.progress = (100 * waterInfo.ml) / waterInfo.meta;
+      await updateWaterInfo(user?.id, waterInfo._id, waterInfo.progress, waterInfo.ml, waterInfo.meta);
+      await loadData();
+    }
   }
-  const handleRemove = () => {
-    console.log('remove agua')
-  }
-  const handleZero = () => {
-    console.log('zero agua')
+
+  const handleZero = async () => {
+    waterInfo.ml = 0;
+    waterInfo.progress = (100 * waterInfo.ml) / waterInfo.meta;
+    await updateWaterInfo(user?.id, waterInfo._id, waterInfo.progress, waterInfo.ml, waterInfo.meta);
+    await loadData();
   }
 
 

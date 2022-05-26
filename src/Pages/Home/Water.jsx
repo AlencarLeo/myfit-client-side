@@ -16,7 +16,7 @@ const Water = ({waterInfo, onAdd, onZero, onRemove}) => {
         <div>
           { waterInfo &&
           <ProgressBar percent={waterInfo.progress}>
-            <p>{waterInfo.ml}L</p>
+            <p>{waterInfo.ml / 1000}L</p>
           </ProgressBar> 
           }
         </div>
@@ -26,7 +26,7 @@ const Water = ({waterInfo, onAdd, onZero, onRemove}) => {
             <p>Meta do dia</p>
             
             { waterInfo &&
-              <h3><span>{waterInfo.ml}/</span>{`${waterInfo.meta / 1000}L`}</h3>
+              <h3><span>{waterInfo.ml / 1000}/</span>{`${waterInfo.meta / 1000}L`}</h3>
             }
 
             <div>

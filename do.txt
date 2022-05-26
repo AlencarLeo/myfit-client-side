@@ -34,5 +34,4 @@ f.1- Melhorar primeira criação de dados dos usuários (waterInfo, carbInfo...)
 // hover effecto for button
 // Global styles, theme provider e continuar a organizar styled-components
 
-
-// tornar reativo valores de ml
+// colocar no backend-> waterInfo.progress = (100 * waterInfo.ml) / waterInfo.meta;

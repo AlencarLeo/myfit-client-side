@@ -32,7 +32,7 @@ export const getWaterInfo = async (userId, query) => {
 export const createWaterInfo = async (userId, ml, progress, meta) => {
   let url = `/users/${userId}/water/`
 
-  return api.post(url, {
+  return api.post(url, { 
     progress,
     ml,
     meta

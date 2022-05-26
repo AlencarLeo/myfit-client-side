@@ -27,13 +27,12 @@ META ATUAL:
 7- erro loading primeiro carregamento;
 
 f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e documentar no GitHub;
+f.1- Melhorar primeira criação de dados dos usuários (waterInfo, carbInfo...)
 
 // Organizar ordem dos imports
 // criar itegração agua e texto explicando
 // hover effecto for button
 // Global styles, theme provider e continuar a organizar styled-components
-
-// da mesma forma que waterInfo.progress atualiza sozinho no back, fazer com macros
 
 
 // tornar reativo valores de ml

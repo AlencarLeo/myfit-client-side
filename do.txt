@@ -1,6 +1,5 @@
 META ATUAL: 
-
-1- Melhorar pastas código, semantica html e 1URGENTE: styled-components;
+1- Melhorar pastas código, semantica html e URGENTE: styled-components;
 
 2- Continuar integração do banco de dados com as informações de água
   2.1- Limitar criação de water info para 1;
@@ -16,22 +15,26 @@ META ATUAL:
   4.1 - definir meta de água com perfil;
   4.2 - definir meta de carbo com perfil;
   4.3 - integrar metas;
-  4.4 - grafico não atualiza;
 ;
-
 
 5- Erros que aparecem no console;
 
 6- Boas práticas React e js // clean code;
 
-7- erro loading primeiro carregamento;
-
 f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e documentar no GitHub;
-f.1- Melhorar primeira criação de dados dos usuários (waterInfo, carbInfo...)
 
+HOJE:
 // Organizar ordem dos imports
-// criar itegração agua e texto explicando
 // hover effecto for button
 // Global styles, theme provider e continuar a organizar styled-components
+// URGENTE: styled-components
+// Revisar Water.jsx, organizar melhor codigo e arquitetura.
+// Definir meta Water perfil
+// Replicar dois ultimos para Macro.jsx
 
+MEDIO PRAZO:
 // colocar no backend-> waterInfo.progress = (100 * waterInfo.ml) / waterInfo.meta;
+
+MUITO FUTURAMENTE:
+// Defininir metas do usuário ao registrar-se
+// FAQ: Explicando o porque da água e medida ml/kg usadas

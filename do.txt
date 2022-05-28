@@ -27,7 +27,8 @@ HOJE:
 // URGENTE: styled-components
 // Global styles, theme provider e continuar a organizar styled-components
 // hover effecto for button
-// criar e transformar todos estilos de componentes
+// criar e transformar todos estilos de componentes - textos, containers, content, flex e etc
+// Criar validação email e erro ao acessar senha/email invalido printando {json na tela?}
 
 // Revisar Water.jsx, organizar melhor codigo e arquitetura.
 // Definir meta Water perfil
@@ -39,3 +40,4 @@ MEDIO PRAZO:
 MUITO FUTURAMENTE:
 // Defininir metas do usuário ao registrar-se
 // FAQ: Explicando o porque da água e medida ml/kg usadas
+// Colocar conteudo em spreads {...}

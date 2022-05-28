@@ -16,10 +16,12 @@ const LoginPage = () => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  function handleRegister(e){
+  const handleRegister = async (e) =>{
     e.preventDefault();
-    createUser(email, password, name);
-    navigate('/');
+    await createUser(email, password, name);
+    if(createUser){
+      navigate('/');
+    }
   } 
 
   return (

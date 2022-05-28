@@ -24,10 +24,11 @@ META ATUAL:
 f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e documentar no GitHub;
 
 HOJE:
-// Organizar ordem dos imports
-// hover effecto for button
-// Global styles, theme provider e continuar a organizar styled-components
 // URGENTE: styled-components
+// Global styles, theme provider e continuar a organizar styled-components
+// hover effecto for button
+// criar e transformar todos estilos de componentes
+
 // Revisar Water.jsx, organizar melhor codigo e arquitetura.
 // Definir meta Water perfil
 // Replicar dois ultimos para Macro.jsx

@@ -1,12 +1,14 @@
 import React from 'react'
 import { Title } from '../../../components/styles/Title.styled'
 import { Subtitle } from '../../../components/styles/Subtitle.styled'
+import { Button } from '../../../components/styles/Button.styled'
 
 import {
   Container,
   Content,
   ProgressBar,
-  Meta
+  Meta,
+  Actions
 } from './styles'
 
 
@@ -32,11 +34,11 @@ const Water = ({waterInfo, onAdd, onZero, onRemove}) => {
               <h3><span>{waterInfo.ml / 1000}/</span>{`${waterInfo.meta / 1000}L`}</h3>
             }
 
-            <div>
-              <button onClick={onAdd}>+250ml</button>
-              <button onClick={onRemove}>-250ml</button>
-              <button onClick={onZero}>Limpar</button>
-            </div>
+            <Actions>
+              <Button onClick={onAdd}>+250ml</Button>
+              <Button onClick={onRemove}>-250ml</Button>
+              <Button onClick={onZero}>Limpar</Button>
+            </Actions>
           </Meta>
         </Content>
       </Container>

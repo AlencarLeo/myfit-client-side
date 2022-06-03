@@ -11,6 +11,7 @@ export const Button = styled.button`
   transition: all .3s ease-in-out;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 10px;
 
   &:hover{
     background-color:  ${(props) => props.theme.colors.cianDark};

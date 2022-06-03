@@ -6,34 +6,12 @@ export const Meta = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 250px;
-  p{
-    font-size: .875rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-  }
 
   h3{
     text-align: center;
     font-size: 3rem;
     span{
       font-size: 1.5rem;
-    }
-  }
-
-  div{
-    display: flex;
-  }
-
-  button{
-    outline: none;
-    border: none;
-    background-color: transparent;
-    color: #00EEC3;
-    font-size: 1rem;
-    cursor: pointer;
-    &:hover{
-      text-decoration: underline;
     }
   }
 `
@@ -74,4 +52,6 @@ export const Content = styled.div`
   flex: 1;
   padding: 20px;
 `
-
+export const Actions = styled.div`
+  display: flex;
+`

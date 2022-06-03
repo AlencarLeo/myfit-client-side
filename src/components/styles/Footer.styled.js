@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
-  background-color: #373737;
+  background-color: ${(props) => props.theme.colors.blackLight};
   width: 100%;
   position: fixed;
   bottom: 0;

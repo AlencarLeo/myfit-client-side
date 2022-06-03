@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Button = styled.button`
-  background-color: #16CAC7;
+  background-color:  ${(props) => props.theme.colors.cian};
   border: none;
   cursor: pointer;
   width: 100%;
@@ -13,6 +13,6 @@ export const Button = styled.button`
   text-transform: uppercase;
 
   &:hover{
-    background-color: #1FFFD6;
+    background-color:  ${(props) => props.theme.colors.cianDark};
   }
 `

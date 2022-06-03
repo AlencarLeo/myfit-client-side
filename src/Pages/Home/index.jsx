@@ -2,8 +2,7 @@ import React, {useState, useContext, useEffect} from 'react'
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import Water from './Water';
-//import Macro from './Macro';
+import Water from './Water/Water';
 
 
 import { AuthContext } from '../../context/auth';
@@ -74,7 +73,6 @@ const Home = () => {
         onRemove={handleRemove}
         onZero={handleZero}
       />
-      {/*<Macro />*/}
 
       <Footer />
     </HomePage>

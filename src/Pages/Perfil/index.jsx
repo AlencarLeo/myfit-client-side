@@ -6,6 +6,8 @@ import {InputField} from '../../components/styles/InputField.styled'
 import { AuthContext } from '../../context/auth'
 import { getWaterInfo, updateWaterInfo } from '../../services/api';
 
+import {WaterPrefer} from './styles'
+
 const Profile = () => {
   const {user} = useContext(AuthContext);
   const [waterInfo, setWaterInfo] = useState({});
@@ -43,7 +45,7 @@ const Profile = () => {
 
     <h1>Defina suas metas, {user.name}.</h1>
 
-    <div>
+    <WaterPrefer>
       <h2>definir meta agua</h2>
 
       <InputField>
@@ -56,13 +58,13 @@ const Profile = () => {
           onChange={({target}) => setWeigth(target.value)} 
           required
         />
-        <label htmlFor="waterMeta">peso em kg</label>
+        <label htmlFor="waterMeta">Peso em kg</label>
       </InputField>
 
       <p>Você deve beber: {profileMetaWater}L de água diariamente</p>
       <Button onClick={handleClick}>Definir</Button>
       
-    </div>
+    </WaterPrefer>
 
     <Footer />
     </>

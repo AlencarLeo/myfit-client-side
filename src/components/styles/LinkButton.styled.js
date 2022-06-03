@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const LinkButton = styled.a`
-  color: #00EEC3;
+  color: ${(props) => props.theme.colors.cian};
   text-decoration: none;
 
   &:hover{

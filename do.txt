@@ -25,8 +25,6 @@ f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e 
 
 HOJE:
 // URGENTE: styled-components
-// Global styles, theme provider e continuar a organizar styled-components
-// hover effecto for button
 // criar e transformar todos estilos de componentes - textos, containers, content, flex e etc
 // Criar validação email e erro ao acessar senha/email invalido printando {json na tela?}
 

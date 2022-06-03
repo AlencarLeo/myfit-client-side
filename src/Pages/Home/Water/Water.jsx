@@ -1,7 +1,10 @@
 import React from 'react'
+import { Title } from '../../../components/styles/Title.styled'
+import { Subtitle } from '../../../components/styles/Subtitle.styled'
 
 import {
-  Drink,
+  Container,
+  Content,
   ProgressBar,
   Meta
 } from './styles'
@@ -11,19 +14,19 @@ const Water = ({waterInfo, onAdd, onZero, onRemove}) => {
 
   return (
     <>
-      <h3>Água</h3>
-      <Drink>
-        <div>
+      <Title>Água</Title>
+      <Container>
+        <Content>
           { waterInfo &&
           <ProgressBar percent={waterInfo.progress}>
             <p>{waterInfo.ml / 1000}L</p>
           </ProgressBar> 
           }
-        </div>
+        </Content>
 
-        <div>
+        <Content>
           <Meta>
-            <p>Meta do dia</p>
+            <Subtitle>Meta do dia</Subtitle>
             
             { waterInfo &&
               <h3><span>{waterInfo.ml / 1000}/</span>{`${waterInfo.meta / 1000}L`}</h3>
@@ -35,8 +38,8 @@ const Water = ({waterInfo, onAdd, onZero, onRemove}) => {
               <button onClick={onZero}>Limpar</button>
             </div>
           </Meta>
-        </div>
-      </Drink>
+        </Content>
+      </Container>
     </>
   )
 }

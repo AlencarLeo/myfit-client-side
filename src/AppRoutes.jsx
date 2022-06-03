@@ -8,10 +8,10 @@ import {
 
 import { AuthProvider, AuthContext } from './context/auth';
 
-import LoginPage from './Pages/LoginPage/index';
-import RegisterPage from "./Pages/RegistesPage/index";
-import Home from './Pages/Home/index';
-import Perfil from './Pages/Perfil/index';
+import LoginPage from './pages/LoginPage/index';
+import RegisterPage from "./pages/RegistesPage/index";
+import Home from './pages/Home/index';
+import Perfil from './pages/Perfil/index';
 
 
 const AppRoutes = () => {

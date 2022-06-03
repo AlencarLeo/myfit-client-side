@@ -52,7 +52,7 @@ export const ProgressBar = styled.div`
     position: absolute;
     height: 85%;
     width: 85%;
-    background-color: #090909;
+    background-color: ${(props) => props.theme.colors.blackDark};
     border-radius: 50%;
   }
   p{
@@ -61,16 +61,17 @@ export const ProgressBar = styled.div`
   }
 `
 
-export const Drink = styled.div`
-  background-color: #090909;
+export const Container = styled.div`
+  background-color: ${(props) => props.theme.colors.blackDark};
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  color: #f1f1f1;
+  color: ${(props) => props.theme.colors.white};
   width: 100%;
-  div{
-    flex: 1;
-    padding: 20px;
-  }
 `
+export const Content = styled.div`
+  flex: 1;
+  padding: 20px;
+`
+

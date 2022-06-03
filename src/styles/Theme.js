@@ -6,6 +6,7 @@ const theme = {
   colors: {
     white: '#f1f1f1',
     
+    blackDark: '#090909',
     black: '#191919',
     blackLight: '#373737',
 
@@ -16,11 +17,10 @@ const theme = {
   },
   fonts: ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'].join(','),
   fontSizes: {
-    small: '.8rem',
+    small: '.75rem',
     normal: '1rem',
-    large: '1.2rem',
-    title: '1.3rem',
-    subtitle: '1.25rem',
+    title: '1.5rem',
+    subtitle: '1.125rem',
   },
   breakpoints: {
     xs: '0',

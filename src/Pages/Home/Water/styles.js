@@ -5,13 +5,12 @@ export const Meta = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 250px;
 
   h3{
     text-align: center;
-    font-size: 3rem;
+    font-size: ${(props) => props.theme.fontSizes.emphasis};
     span{
-      font-size: 1.5rem;
+      font-size: ${(props) => props.theme.fontSizes.title};
     }
   }
 `
@@ -23,8 +22,10 @@ export const ProgressBar = styled.div`
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: conic-gradient( #00EEC3 ${props => `${props.percent * 3.6}deg`}, #191919 ${props => `${props.percent * 3.6}deg`});
+  background: conic-gradient( ${(props) => props.theme.colors.cian} ${props => `${props.percent * 3.6}deg`}, 
+                              ${(props) => props.theme.colors.black} ${props => `${props.percent * 3.6}deg`});
   transition: all .3s ease-in-out;
+
   &::before{
     content: '';
     position: absolute;
@@ -33,9 +34,10 @@ export const ProgressBar = styled.div`
     background-color: ${(props) => props.theme.colors.blackDark};
     border-radius: 50%;
   }
+  
   p{
     z-index: 0;
-    font-size: 3rem;
+    font-size: ${(props) => props.theme.fontSizes.emphasis};
   }
 `
 

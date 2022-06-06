@@ -4,23 +4,27 @@ import { ThemeProvider } from 'styled-components';
 
 const theme = {
   colors: {
-    white: '#f1f1f1',
+    white: '#D7D7D7',
+    whiteDark: '#F9F9F9',
     
     blackDark: '#090909',
     black: '#191919',
-    blackLight: '#373737',
+    blackLight: '#292929',
 
-    cian: '#16CAC7',
-    cianDark: '##1FFFD6'
+    cianLight: '#C2FFFF',
+    cian: '#33FFFF',
+    cianDark: '##00D7D7'
 
 
   },
   fonts: ['Open Sans', 'Arial', 'Helvetica', 'sans-serif'].join(','),
   fontSizes: {
+    xsmall: '.625rem',
     small: '.75rem',
+    subtitle: '.875rem',
     normal: '1rem',
     title: '1.5rem',
-    subtitle: '1.125rem',
+    emphasis: '4rem'
   },
   breakpoints: {
     xs: '0',

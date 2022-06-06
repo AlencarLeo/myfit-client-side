@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #191919;
-  color: #f1f1f1;
+  background-color: ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.withe};
   padding-bottom: 100px;
   }
 `

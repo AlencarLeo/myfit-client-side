@@ -26,7 +26,6 @@ f- Aplicar e revisar clean code/architecture .Entender código de cabo a rabo e 
 HOJE:
 // URGENTE: styled-components
 // criar e transformar todos estilos de componentes - textos, containers, content, flex e etc
-// Criar validação email e erro ao acessar senha/email invalido printando {json na tela?}
 
 // Revisar Water.jsx, organizar melhor codigo e arquitetura.
 // Definir meta Water perfil
@@ -41,3 +40,4 @@ MUITO FUTURAMENTE:
 // Defininir metas do usuário ao registrar-se
 // FAQ: Explicando o porque da água e medida ml/kg usadas
 // Colocar conteudo em spreads {...}
+// Criar validação email e erro ao acessar senha/email invalido printando {json na tela?}

@@ -62,6 +62,8 @@ const Profile = () => {
       </InputField>
 
       <p>Você deve beber: {profileMetaWater}L de água diariamente</p>
+      <p>Você deve consumir: 100g de proteina, 100g de carboidrato e 100g de gorduras</p>
+      <p>Kcal diária: 2000</p>
       <Button onClick={handleClick}>Definir</Button>
       
     </WaterPrefer>

@@ -12,8 +12,7 @@ import {
   createWaterInfo, 
   updateWaterInfo,
   getMacroInfo, 
-  createMacroInfo, 
-  updateMacroInfo 
+  createMacroInfo
 } from '../../services/api';
 
 

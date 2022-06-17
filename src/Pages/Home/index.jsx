@@ -33,8 +33,10 @@ const Home = () => {
 
   const loadData = async (query = '') => {
     try{
-      const WaterResponse = await getWaterInfo(user?.id, query);
-      const MacroResponse = await getMacroInfo(user?.id, query);
+      const [WaterResponse, MacroResponse] = await Promise.all([
+        getWaterInfo(user?.id, query), getMacroInfo(user?.id, query)
+      ])
+      
       setWaterInfo(WaterResponse.data);
       setMacroInfo(MacroResponse.data);
 

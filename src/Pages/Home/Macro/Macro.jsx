@@ -11,14 +11,13 @@ import {
 
 const Macro = ({macroInfo}) => {
 
-  console.log(macroInfo)
   return (
     <>
       <Title>Dieta</Title>
 
       <Container>
         <Subtitle>Macro diáro</Subtitle>
-        { macroInfo &&
+        { macroInfo.macro &&
         <Content>
           <Info>
             <Subtitle>Carboidratos <span>{`${macroInfo.macro.carb.g}g/${macroInfo.macro.carb.meta}g`}</span></Subtitle>

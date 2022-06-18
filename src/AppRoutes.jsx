@@ -12,6 +12,7 @@ import LoginPage from './pages/LoginPage/index';
 import RegisterPage from "./pages/RegistesPage/index";
 import Home from './pages/Home/index';
 import Perfil from './pages/Perfil/index';
+import Dieta from './pages/Dieta/index';
 
 
 const AppRoutes = () => {
@@ -45,6 +46,12 @@ const AppRoutes = () => {
           <Route exact path="/perfil" element={
             <Private>
               <Perfil/>
+            </Private>
+          } />
+
+          <Route exact path="/dieta" element={
+            <Private>
+              <Dieta/>
             </Private>
           } />
         </Routes>

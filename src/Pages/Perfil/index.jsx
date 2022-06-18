@@ -73,7 +73,7 @@ const Profile = () => {
     <h1>Defina suas metas, {user.name}.</h1>
 
     <WaterPrefer>
-      <h2>definir meta agua</h2>
+      <h2>definir metas automaticamente</h2>
 
       <InputField>
         <input 

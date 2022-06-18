@@ -16,6 +16,11 @@ const GlobalStyle = createGlobalStyle`
   color: ${(props) => props.theme.colors.white};
   padding-bottom: 100px;
   }
+
+  h1{
+    padding: 0;
+    margin: 0;
+  }
 `
 
 export default GlobalStyle;
